@@ -1,0 +1,16 @@
+name: main
+
+on:
+  workflow_dispatch:
+    inputs:
+      rnd_par_1:
+        description: 'Random parameter 1'
+        required: true
+        default: 'Random'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo the input
+        run: echo '${{ github.event.inputs.rnd_par_1 }}'
